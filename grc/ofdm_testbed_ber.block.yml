@@ -42,6 +42,7 @@ outputs:
   domain: stream
   dtype: float
   optional: true
+  hide: ${ not enable_output }
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.
