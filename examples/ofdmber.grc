@@ -207,7 +207,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [16, 148.0]
+    coordinate: [80, 196.0]
     rotation: 0
     state: true
 - name: blocks_file_source_0_0
@@ -322,7 +322,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [256, 132.0]
+    coordinate: [288, 132.0]
     rotation: 0
     state: true
 - name: blocks_throttle_1
