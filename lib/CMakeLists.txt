@@ -13,6 +13,7 @@ include(GrPlatform) #define LIB_SUFFIX
 
 list(APPEND ofdm_testbed_sources
     ber_impl.cc
+    ber_pattern_generator_impl.cc
 )
 
 set(ofdm_testbed_sources "${ofdm_testbed_sources}" PARENT_SCOPE)
@@ -56,6 +57,7 @@ include(GrTest)
 #include_directories()
 # List all files that contain Boost.UTF unit tests here
 list(APPEND test_ofdm_testbed_sources
+qa_ber_pattern_generator.cc
 qa_ber.cc
 )
 # Anything we need to link to for the unit tests go here

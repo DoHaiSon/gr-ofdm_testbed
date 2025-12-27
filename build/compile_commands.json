@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/minh/gr-ofdm_testbed/build/lib",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK -DFMT_LOCALE -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dgnuradio_ofdm_testbed_EXPORTS -I/home/minh/gr-ofdm_testbed/lib/../include -isystem /usr/include/python3.10  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -fPIC -o CMakeFiles/gnuradio-ofdm_testbed.dir/ber_impl.cc.o -c /home/minh/gr-ofdm_testbed/lib/ber_impl.cc",
+  "file": "/home/minh/gr-ofdm_testbed/lib/ber_impl.cc"
+},
+{
+  "directory": "/home/minh/gr-ofdm_testbed/build/lib",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK -DFMT_LOCALE -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dgnuradio_ofdm_testbed_EXPORTS -I/home/minh/gr-ofdm_testbed/lib/../include -isystem /usr/include/python3.10  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -fPIC -o CMakeFiles/gnuradio-ofdm_testbed.dir/ber_pattern_generator_impl.cc.o -c /home/minh/gr-ofdm_testbed/lib/ber_pattern_generator_impl.cc",
+  "file": "/home/minh/gr-ofdm_testbed/lib/ber_pattern_generator_impl.cc"
+},
+{
+  "directory": "/home/minh/gr-ofdm_testbed/build/lib",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN -DBOOST_THREAD_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DFMT_LOCALE -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/home/minh/gr-ofdm_testbed/lib/../include -isystem /usr/include/python3.10  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -o CMakeFiles/ofdm_testbed_qa_ber_pattern_generator.cc.dir/qa_ber_pattern_generator.cc.o -c /home/minh/gr-ofdm_testbed/lib/qa_ber_pattern_generator.cc",
+  "file": "/home/minh/gr-ofdm_testbed/lib/qa_ber_pattern_generator.cc"
+},
+{
+  "directory": "/home/minh/gr-ofdm_testbed/build/lib",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN -DBOOST_THREAD_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DFMT_LOCALE -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/home/minh/gr-ofdm_testbed/lib/../include -isystem /usr/include/python3.10  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -o CMakeFiles/ofdm_testbed_qa_ber.cc.dir/qa_ber.cc.o -c /home/minh/gr-ofdm_testbed/lib/qa_ber.cc",
+  "file": "/home/minh/gr-ofdm_testbed/lib/qa_ber.cc"
+},
+{
+  "directory": "/home/minh/gr-ofdm_testbed/build/python/ofdm_testbed/bindings",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_DATE_TIME_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DFMT_LOCALE -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dofdm_testbed_python_EXPORTS -I/home/minh/gr-ofdm_testbed/build/python/ofdm_testbed/bindings -I/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/../../../lib -I/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/../../../include -I/home/minh/gr-ofdm_testbed/lib/../include -isystem /usr/include/python3.10 -isystem /usr/lib/python3/dist-packages/numpy/core/include  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -fPIC -fvisibility=hidden -Wno-unused-variable -flto -fno-fat-lto-objects -o CMakeFiles/ofdm_testbed_python.dir/ber_python.cc.o -c /home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/ber_python.cc",
+  "file": "/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/ber_python.cc"
+},
+{
+  "directory": "/home/minh/gr-ofdm_testbed/build/python/ofdm_testbed/bindings",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_DATE_TIME_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DFMT_LOCALE -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dofdm_testbed_python_EXPORTS -I/home/minh/gr-ofdm_testbed/build/python/ofdm_testbed/bindings -I/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/../../../lib -I/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/../../../include -I/home/minh/gr-ofdm_testbed/lib/../include -isystem /usr/include/python3.10 -isystem /usr/lib/python3/dist-packages/numpy/core/include  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -fPIC -fvisibility=hidden -Wno-unused-variable -flto -fno-fat-lto-objects -o CMakeFiles/ofdm_testbed_python.dir/ber_pattern_generator_python.cc.o -c /home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/ber_pattern_generator_python.cc",
+  "file": "/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/ber_pattern_generator_python.cc"
+},
+{
+  "directory": "/home/minh/gr-ofdm_testbed/build/python/ofdm_testbed/bindings",
+  "command": "/usr/bin/c++ -DBOOST_ALL_NO_LIB -DBOOST_ATOMIC_DYN_LINK -DBOOST_DATE_TIME_DYN_LINK -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_REGEX_DYN_LINK -DBOOST_SYSTEM_DYN_LINK -DBOOST_THREAD_DYN_LINK -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK -DFMT_LOCALE -DFMT_SHARED -DGR_CTRLPORT -DGR_MPLIB_GMP -DGR_PERFORMANCE_COUNTERS -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dofdm_testbed_python_EXPORTS -I/home/minh/gr-ofdm_testbed/build/python/ofdm_testbed/bindings -I/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/../../../lib -I/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/../../../include -I/home/minh/gr-ofdm_testbed/lib/../include -isystem /usr/include/python3.10 -isystem /usr/lib/python3/dist-packages/numpy/core/include  -fvisibility=hidden -Wsign-compare -Wall -Wno-uninitialized -O3 -DNDEBUG -fPIC -fvisibility=hidden -Wno-unused-variable -flto -fno-fat-lto-objects -o CMakeFiles/ofdm_testbed_python.dir/python_bindings.cc.o -c /home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/python_bindings.cc",
+  "file": "/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/python_bindings.cc"
+}
+]

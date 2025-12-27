@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1ofdm__testbed_1_1ber" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::ofdm_testbed::ber</compoundname>
+    <basecompoundref prot="public" virt="virtual">gr::sync_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1ofdm__testbed_1_1ber__impl" prot="public" virt="non-virtual">gr::ofdm_testbed::ber_impl</derivedcompoundref>
+    <includes refid="ber_8h" local="no">ber.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1ofdm__testbed_1_1ber_1ad0beb7c2e2ce54422d1feea714e17762" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classgr_1_1ofdm__testbed_1_1ber" kindref="compound">ber</ref> &gt;</type>
+        <definition>typedef std::shared_ptr&lt;ber&gt; gr::ofdm_testbed::ber::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber.h" line="27" column="29" bodyfile="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1ofdm__testbed_1_1ber_1aefa96b012a8f07eda933f5965f26467d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1ofdm__testbed_1_1ber_1ad0beb7c2e2ce54422d1feea714e17762" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::ofdm_testbed::ber::make</definition>
+        <argsstring>(int avg_len=1000000, bool enable_output=false)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>avg_len</declname>
+          <defval>1000000</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enable_output</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1ofdm__testbed_1_1ber" kindref="compound">ofdm_testbed::ber</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1ofdm__testbed_1_1ber" kindref="compound">ofdm_testbed::ber</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1ofdm__testbed_1_1ber_1aefa96b012a8f07eda933f5965f26467d" kindref="member">ofdm_testbed::ber::make</ref> is the public interface for creating new instances.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>avg_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of bits to calculate average BER (default: 1000000) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enable_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Enable output stream (default: false) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber.h" line="40" column="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1ofdm__testbed_1_1ber_1a26b66a1b9bb4ff432e81ee0202ef3064" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::ofdm_testbed::ber::set_avg_len</definition>
+        <argsstring>(int avg_len)=0</argsstring>
+        <name>set_avg_len</name>
+        <reimplementedby refid="classgr_1_1ofdm__testbed_1_1ber__impl_1a6fee4ce19699a1232be4e854c2fd1396">set_avg_len</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>avg_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber.h" line="41" column="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>gr::ofdm_testbed::ber</label>
+        <link refid="classgr_1_1ofdm__testbed_1_1ber"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::ofdm_testbed::ber_impl</label>
+        <link refid="classgr_1_1ofdm__testbed_1_1ber__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>gr::ofdm_testbed::ber</label>
+        <link refid="classgr_1_1ofdm__testbed_1_1ber"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber.h" line="24" column="1" bodyfile="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber.h" bodystart="25" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classgr_1_1ofdm__testbed_1_1ber_1aefa96b012a8f07eda933f5965f26467d" prot="public" virt="non-virtual"><scope>gr::ofdm_testbed::ber</scope><name>make</name></member>
+      <member refid="classgr_1_1ofdm__testbed_1_1ber_1a26b66a1b9bb4ff432e81ee0202ef3064" prot="public" virt="pure-virtual"><scope>gr::ofdm_testbed::ber</scope><name>set_avg_len</name></member>
+      <member refid="classgr_1_1ofdm__testbed_1_1ber_1ad0beb7c2e2ce54422d1feea714e17762" prot="public" virt="non-virtual"><scope>gr::ofdm_testbed::ber</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

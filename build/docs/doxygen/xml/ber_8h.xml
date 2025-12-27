@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="ber_8h" kind="file" language="C++">
+    <compoundname>ber.h</compoundname>
+    <includes local="no">gnuradio/sync_block.h</includes>
+    <includes refid="api_8h" local="no">gnuradio/ofdm_testbed/api.h</includes>
+    <includedby refid="ber__impl_8h" local="no">ber_impl.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>gnuradio/ofdm_testbed/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="4">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="1">
+        <label>ber.h</label>
+        <link refid="ber_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>ber.h</label>
+        <link refid="ber_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ber_impl.h</label>
+        <link refid="ber__impl_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classgr_1_1ofdm__testbed_1_1ber" prot="public">gr::ofdm_testbed::ber</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1ofdm__testbed">gr::ofdm_testbed</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber.h"/>
+  </compounddef>
+</doxygen>
