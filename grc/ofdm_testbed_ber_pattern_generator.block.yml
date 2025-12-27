@@ -6,7 +6,7 @@ templates:
   imports: from gnuradio import ofdm_testbed
   make: ofdm_testbed.ber_pattern_generator(${error_rate}, ${pattern_len})
   callbacks:
-  - set_error_rate(${error_rate}) # <--- QUAN TRỌNG: Để slider hoạt động runtime
+  - set_error_rate(${error_rate}) 
 
 parameters:
 - id: error_rate

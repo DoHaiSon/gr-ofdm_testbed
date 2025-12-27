@@ -27,7 +27,7 @@ public:
     ber_pattern_generator_impl(double error_rate, int pattern_len);
     ~ber_pattern_generator_impl();
 
-    // Override setter function
+    // Override setter function.
     void set_error_rate(double error_rate) override;
 
     int work(int noutput_items,

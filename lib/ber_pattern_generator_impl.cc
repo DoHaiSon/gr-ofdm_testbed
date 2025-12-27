@@ -53,10 +53,10 @@ void ber_pattern_generator_impl::regenerate_pattern()
     
     d_index = 0;
     d_need_regen = false;
-    // std::cout << "Generated " << d_pattern_len << " bits with error rate " << d_error_rate << std::endl;
+    // std::cout << "Generated " << d_pattern_len << " bits with error rate " << d_error_rate << std::endl;;
 }
 
-
+// Function error rate (pattern_generator)
 void ber_pattern_generator_impl::set_error_rate(double error_rate)
 {
     

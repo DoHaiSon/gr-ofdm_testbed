@@ -36,4 +36,4 @@ class qa_ber_pattern_generator(gr_unittest.TestCase):
 
 
 if __name__ == '__main__':
-    gr_unittest.run(qa_ber_pattern_generator)
+    gr_unittest.run(qa_ber_pattern_generator)  
