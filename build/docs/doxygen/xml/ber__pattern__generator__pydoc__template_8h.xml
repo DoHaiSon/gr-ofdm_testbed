@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="ber__pattern__generator__pydoc__template_8h" kind="file" language="C++">
+    <compoundname>ber_pattern_generator_pydoc_template.h</compoundname>
+    <includes local="yes">pydoc_macros.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>pydoc_macros.h</label>
+      </node>
+      <node id="1">
+        <label>ber_pattern_generator_pydoc_template.h</label>
+        <link refid="ber__pattern__generator__pydoc__template_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ber__pattern__generator__pydoc__template_8h_1a74021f021dcdfbb22891787b79c5529d" prot="public" static="no">
+        <name>D</name>
+        <param><defname>...</defname></param>
+        <initializer><ref refid="docs_2doxygen_2pydoc__macros_8h_1a4e578031ec998eaeb933d5caa6a7d28a" kindref="member">DOC</ref>(gr,ofdm_testbed, __VA_ARGS__ )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" line="10" column="10" bodyfile="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="ber__pattern__generator__pydoc__template_8h_1ae68acdd1313ffba20b715aa5f663cef0" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_ofdm_testbed_ber_pattern_generator</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_ofdm_testbed_ber_pattern_generator</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" line="19" column="20" bodyfile="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ber__pattern__generator__pydoc__template_8h_1a3471b7a1998a82a3716e241c70fcd788" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_ofdm_testbed_ber_pattern_generator_ber_pattern_generator_0</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_ofdm_testbed_ber_pattern_generator_ber_pattern_generator_0</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" line="22" column="20" bodyfile="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ber__pattern__generator__pydoc__template_8h_1a8583019ce8dd17ff7c7d6275b6c49597" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_ofdm_testbed_ber_pattern_generator_ber_pattern_generator_1</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_ofdm_testbed_ber_pattern_generator_ber_pattern_generator_1</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" line="25" column="20" bodyfile="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ber__pattern__generator__pydoc__template_8h_1a57991af56af4b6b2f0af237329675a2c" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_ofdm_testbed_ber_pattern_generator_make</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_ofdm_testbed_ber_pattern_generator_make</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" line="28" column="20" bodyfile="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="ber__pattern__generator__pydoc__template_8h_1a0398d1284cf8fb13e9655c56a8722a49" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* __doc_gr_ofdm_testbed_ber_pattern_generator_set_error_rate</definition>
+        <argsstring></argsstring>
+        <name>__doc_gr_ofdm_testbed_ber_pattern_generator_set_error_rate</name>
+        <initializer>= R&quot;doc()doc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" line="31" column="20" bodyfile="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/minh/gr-ofdm_testbed/python/ofdm_testbed/bindings/docstrings/ber_pattern_generator_pydoc_template.h"/>
+  </compounddef>
+</doxygen>

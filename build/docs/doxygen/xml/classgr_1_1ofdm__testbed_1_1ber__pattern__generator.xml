@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="classgr_1_1ofdm__testbed_1_1ber__pattern__generator" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::ofdm_testbed::ber_pattern_generator</compoundname>
+    <basecompoundref prot="public" virt="virtual">gr::sync_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator__impl" prot="public" virt="non-virtual">gr::ofdm_testbed::ber_pattern_generator_impl</derivedcompoundref>
+    <includes refid="ber__pattern__generator_8h" local="no">ber_pattern_generator.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1ofdm__testbed_1_1ber__pattern__generator_1a453bd279be862902a1c015420f6556ab" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator" kindref="compound">ber_pattern_generator</ref> &gt;</type>
+        <definition>typedef std::shared_ptr&lt;ber_pattern_generator&gt; gr::ofdm_testbed::ber_pattern_generator::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber_pattern_generator.h" line="25" column="33" bodyfile="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber_pattern_generator.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1ofdm__testbed_1_1ber__pattern__generator_1acb95ed70abea8c70c6e1c27acbaf7566" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator_1a453bd279be862902a1c015420f6556ab" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::ofdm_testbed::ber_pattern_generator::make</definition>
+        <argsstring>(double error_rate, int pattern_len)</argsstring>
+        <name>make</name>
+        <param>
+          <type>double</type>
+          <declname>error_rate</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pattern_len</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator" kindref="compound">ofdm_testbed::ber_pattern_generator</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error_rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>T? l? l?i bit (ví d? 0.1 cho 10%) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pattern_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ğ? dài chu?i bit m?u (ví d? 50000) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber_pattern_generator.h" line="34" column="21"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1ofdm__testbed_1_1ber__pattern__generator_1a5772693e1c8a230b35a18d7bba6882b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::ofdm_testbed::ber_pattern_generator::set_error_rate</definition>
+        <argsstring>(double error_rate)=0</argsstring>
+        <name>set_error_rate</name>
+        <reimplementedby refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator__impl_1ac6cebae447b9ab287383a3b8d0e73351">set_error_rate</reimplementedby>
+        <param>
+          <type>double</type>
+          <declname>error_rate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber_pattern_generator.h" line="37" column="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="3">
+        <label>gr::ofdm_testbed::ber_pattern_generator_impl</label>
+        <link refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::ofdm_testbed::ber_pattern_generator</label>
+        <link refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="1">
+        <label>gr::ofdm_testbed::ber_pattern_generator</label>
+        <link refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber_pattern_generator.h" line="22" column="5" bodyfile="/home/minh/gr-ofdm_testbed/include/gnuradio/ofdm_testbed/ber_pattern_generator.h" bodystart="23" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator_1acb95ed70abea8c70c6e1c27acbaf7566" prot="public" virt="non-virtual"><scope>gr::ofdm_testbed::ber_pattern_generator</scope><name>make</name></member>
+      <member refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator_1a5772693e1c8a230b35a18d7bba6882b1" prot="public" virt="pure-virtual"><scope>gr::ofdm_testbed::ber_pattern_generator</scope><name>set_error_rate</name></member>
+      <member refid="classgr_1_1ofdm__testbed_1_1ber__pattern__generator_1a453bd279be862902a1c015420f6556ab" prot="public" virt="non-virtual"><scope>gr::ofdm_testbed::ber_pattern_generator</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -7,5 +7,6 @@
 #
 
 install(FILES
-    ofdm_testbed_ber.block.yml DESTINATION share/gnuradio/grc/blocks
+    ofdm_testbed_ber.block.yml
+    ofdm_testbed_ber_pattern_generator.block.yml DESTINATION share/gnuradio/grc/blocks
 )

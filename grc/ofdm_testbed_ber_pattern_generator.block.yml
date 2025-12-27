@@ -1,0 +1,31 @@
+id: ofdm_testbed_ber_pattern_generator
+label: BER Pattern Generator
+category: '[OFDM Testbed]'
+
+templates:
+  imports: from gnuradio import ofdm_testbed
+  make: ofdm_testbed.ber_pattern_generator(${error_rate}, ${pattern_len})
+  callbacks:
+  - set_error_rate(${error_rate}) # <--- QUAN TRỌNG: Để slider hoạt động runtime
+
+parameters:
+- id: error_rate
+  label: Error Rate
+  dtype: float
+  default: 0.1
+- id: pattern_len
+  label: Pattern Length
+  dtype: int
+  default: 50000
+
+inputs: [] 
+
+outputs:
+- label: Ref
+  domain: stream
+  dtype: byte
+- label: Rx
+  domain: stream
+  dtype: byte
+
+file_format: 1
