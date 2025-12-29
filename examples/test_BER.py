@@ -37,6 +37,7 @@ from gnuradio import ofdm_testbed
 from gnuradio.qtgui import Range, RangeWidget
 from PyQt5 import QtCore
 import random
+import test_BER_epy_block_0 as epy_block_0  # embedded python block
 
 
 
@@ -87,13 +88,6 @@ class test_BER(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self._ber_percent_range = Range(0.0, 1, 0.00001, 0.01, 200)
-        self._ber_percent_win = RangeWidget(self._ber_percent_range, self.set_ber_percent, "Expected BER (%)", "counter_slider", float, QtCore.Qt.Horizontal)
-        self.top_grid_layout.addWidget(self._ber_percent_win, 0, 0, 1, 1)
-        for r in range(0, 1):
-            self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(0, 1):
-            self.top_grid_layout.setColumnStretch(c, 1)
         _regenerate_trigger_push_button = Qt.QPushButton('Regenerate Pattern')
         _regenerate_trigger_push_button = Qt.QPushButton('Regenerate Pattern')
         self._regenerate_trigger_choices = {'Pressed': 1, 'Released': 0}
@@ -101,6 +95,13 @@ class test_BER(gr.top_block, Qt.QWidget):
         _regenerate_trigger_push_button.released.connect(lambda: self.set_regenerate_trigger(self._regenerate_trigger_choices['Released']))
         self.top_grid_layout.addWidget(_regenerate_trigger_push_button, 1, 0, 1, 1)
         for r in range(1, 2):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(0, 1):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._ber_percent_range = Range(0.00001, 1, 0.00001, 0.01, 200)
+        self._ber_percent_win = RangeWidget(self._ber_percent_range, self.set_ber_percent, "Expected BER (%)", "counter_slider", float, QtCore.Qt.Horizontal)
+        self.top_grid_layout.addWidget(self._ber_percent_win, 0, 0, 1, 1)
+        for r in range(0, 1):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
@@ -177,7 +178,7 @@ class test_BER(gr.top_block, Qt.QWidget):
 
         for i in range(1):
             self.qtgui_number_sink_0.set_min(i, 0)
-            self.qtgui_number_sink_0.set_max(i, 1)
+            self.qtgui_number_sink_0.set_max(i, 100)
             self.qtgui_number_sink_0.set_color(i, colors[i][0], colors[i][1])
             if len(labels[i]) == 0:
                 self.qtgui_number_sink_0.set_label(i, "Data {0}".format(i))
@@ -193,21 +194,19 @@ class test_BER(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self.ofdm_testbed_ber_pattern_generator_0 = ofdm_testbed.ber_pattern_generator(ber_percent, 50000)
         self.ofdm_testbed_ber_0 = ofdm_testbed.ber(avg_len, True)
+        self.epy_block_0 = epy_block_0.blk(error_rate=ber_percent / 100.0, pattern_len=pattern_len, regen_trigger=regenerate_trigger)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
-        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_ff(1)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.qtgui_number_sink_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.ofdm_testbed_ber_0, 0))
-        self.connect((self.ofdm_testbed_ber_0, 0), (self.blocks_multiply_const_vxx_0, 0))
+        self.connect((self.epy_block_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.epy_block_0, 1), (self.ofdm_testbed_ber_0, 1))
+        self.connect((self.ofdm_testbed_ber_0, 0), (self.qtgui_number_sink_0, 0))
         self.connect((self.ofdm_testbed_ber_0, 0), (self.qtgui_time_sink_x_0, 0))
-        self.connect((self.ofdm_testbed_ber_pattern_generator_0, 0), (self.blocks_throttle_0, 0))
-        self.connect((self.ofdm_testbed_ber_pattern_generator_0, 1), (self.ofdm_testbed_ber_0, 1))
 
 
     def closeEvent(self, event):
@@ -237,13 +236,14 @@ class test_BER(gr.top_block, Qt.QWidget):
 
     def set_pattern_len(self, pattern_len):
         self.pattern_len = pattern_len
+        self.epy_block_0.pattern_len = self.pattern_len
 
     def get_ber_percent(self):
         return self.ber_percent
 
     def set_ber_percent(self, ber_percent):
         self.ber_percent = ber_percent
-        self.ofdm_testbed_ber_pattern_generator_0.set_error_rate(self.ber_percent)
+        self.epy_block_0.error_rate = self.ber_percent / 100.0
 
     def get_avg_len(self):
         return self.avg_len

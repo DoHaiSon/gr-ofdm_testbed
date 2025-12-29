@@ -14,7 +14,6 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include <iostream>
 
 namespace gr {
 namespace ofdm_testbed {
@@ -122,13 +121,13 @@ BOOST_AUTO_TEST_CASE(test_ber_known_errors)
     std::cout << "Expected BER: " << expected_ber << ", Measured BER: " << measured_ber << std::endl;
 }
 
-// Test case 3: Window behavior - Tests updating mechanism over phases
-BOOST_AUTO_TEST_CASE(test_ber_phases)
+// Test case 3: Sliding window behavior - Tests buffer add/remove mechanism
+BOOST_AUTO_TEST_CASE(test_ber_sliding_window)
 {
     int avg_len = 1000000;  // 1 million bits window
     bool enable_output = true;
 
-    // Create test data - 3 phases
+    // Create test data - 3 phases to test sliding window
     std::vector<uint8_t> ref_data;
     std::vector<uint8_t> rx_data;
 
@@ -155,13 +154,11 @@ BOOST_AUTO_TEST_CASE(test_ber_phases)
     for (int i = 0; i < avg_len; i++) {
         ref_data.push_back(1);
         rx_data.push_back(0); // All flipped
-    }
-    
-    int total_bits = ref_data.size();  // 4 million bits total
+    }    int total_bits = ref_data.size();  // 4 million bits total
     std::cout << "Total bits: " << total_bits << std::endl;
 
     // Create blocks
-    auto tb = gr::make_top_block("test_ber_phases");
+    auto tb = gr::make_top_block("test_ber_sliding_window");
     auto src_ref = gr::blocks::vector_source<uint8_t>::make(ref_data);
     auto src_rx = gr::blocks::vector_source<uint8_t>::make(rx_data);
     auto ber_block = ber::make(avg_len, enable_output);
@@ -173,37 +170,37 @@ BOOST_AUTO_TEST_CASE(test_ber_phases)
     tb->connect(ber_block, 0, sink, 0);
 
     // Run flowgraph
-    std::cout << "Running test_ber_phases with " << total_bits << " bits..." << std::endl;
+    std::cout << "Running test_ber_sliding_window with " << total_bits << " bits..." << std::endl;
     tb->run();
 
     // Get results
     std::vector<float> result = sink->data();
 
-    // Check that BER changes as phases change
+    // Check that BER changes as window slides
     BOOST_CHECK(!result.empty());
     BOOST_CHECK_EQUAL(result.size(), total_bits);
 
-    // After processing all 4M bits, the final block should reflect Phase 3 (100% error)
+    // After processing all 4M bits, sliding window contains only last 1M bits (100% error)
+    // Because we remove old data to keep exactly avg_len bits
     float final_ber = result[result.size() - 1];
     std::cout << "Final BER (should be ~1.0 from Phase 3): " << final_ber << std::endl;
     BOOST_CHECK_CLOSE(final_ber, 1.0f, 1.0); // Within 1% tolerance
 
-    // Check BER at end of Phase 1 (1M bits): BER should be ~0
+    // Check BER at different points to verify sliding window
+    // After 1M bits (end of Phase 1): BER should be ~0
     if (result.size() > avg_len) {
         float ber_phase1 = result[avg_len - 1];
-        std::cout << "BER at end of Phase 1: " << ber_phase1 << std::endl;
+        std::cout << "BER at end of Phase 1 (1M bits, should be ~0.0): " << ber_phase1 << std::endl;
         BOOST_CHECK_SMALL(ber_phase1, 0.01f);
     }
 
-    // Check BER at end of Phase 2 (3M bits total): BER should be ~0.5
+    // After 3M bits (end of Phase 2): BER should be ~0.5 (window contains Phase 2 data)
     if (result.size() > 3 * avg_len) {
         float ber_phase2 = result[3 * avg_len - 1];
-        std::cout << "BER at end of Phase 2: " << ber_phase2 << std::endl;
+        std::cout << "BER at end of Phase 2 (3M bits, should be ~0.5): " << ber_phase2 << std::endl;
         BOOST_CHECK_CLOSE(ber_phase2, 0.5f, 2.0); // Within 2% tolerance
     }
-}
-
-// Test case 4: No output mode - Large data stream (console output only)
+}// Test case 4: No output mode - Large data stream (console output only)
 BOOST_AUTO_TEST_CASE(test_ber_no_output)
 {
     int avg_len = 500000;  // 500K bits
@@ -237,13 +234,14 @@ BOOST_AUTO_TEST_CASE(test_ber_no_output)
     BOOST_CHECK(true);
 }
 
-// Test case 5: Buffer stress test - Large data exceeding avg_len
+// Test case 5: Extreme buffer stress test - Very large data exceeding avg_len many times
 BOOST_AUTO_TEST_CASE(test_ber_buffer_stress)
 {
     int avg_len = 100000;  // 100K bits window
     bool enable_output = true;
 
     // Create test data - 20 million bits (200x larger than avg_len)
+    // This heavily tests the buffer add/remove mechanism
     std::vector<uint8_t> ref_data;
     std::vector<uint8_t> rx_data;
 
@@ -289,8 +287,7 @@ BOOST_AUTO_TEST_CASE(test_ber_buffer_stress)
     std::cout << "Final BER after processing " << total_bits << " bits: " << final_ber << std::endl;
 
     // Final window (last 100K bits) should reflect 50% error rate from last 10M segment
-    BOOST_CHECK_CLOSE(final_ber, 0.5f, 2.0);  // Within 2% tolerance
-    std::cout << "Buffer stress test completed successfully!" << std::endl;
+    BOOST_CHECK_CLOSE(final_ber, 0.5f, 2.0);  // Within 2% tolerance    std::cout << "Buffer stress test completed successfully!" << std::endl;
 }
 
 } /* namespace ofdm_testbed */

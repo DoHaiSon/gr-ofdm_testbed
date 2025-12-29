@@ -29,8 +29,7 @@ include(GrPybind)
 ########################################################################
 
 list(APPEND ofdm_testbed_python_files
-    ber_python.cc
-    ber_pattern_generator_python.cc python_bindings.cc)
+    ber_python.cc python_bindings.cc)
 
 GR_PYBIND_MAKE_OOT(ofdm_testbed
    ../../..

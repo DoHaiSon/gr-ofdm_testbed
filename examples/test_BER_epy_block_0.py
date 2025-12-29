@@ -5,19 +5,19 @@ import random
 class blk(gr.sync_block):
     """Generate reference and received bits with variable error rate"""
 
-    def __init__(self, error_rate=0.10, pattern_len=50000):
+    def __init__(self, error_rate=0.10, pattern_len=50000, regen_trigger=0):
         gr.sync_block.__init__(
             self,
             name='BER Pattern Generator',
-            in_sig=[],
+            in_sig=None,
             out_sig=[np.uint8, np.uint8]  # ref and rx outputs
         )
         self.error_rate = error_rate
-        self.prev_error_rate = error_rate
         self.pattern_len = pattern_len
         self.index = 0
+        self.last_trigger = regen_trigger
+        self.need_regen = False
         
-        self.need_regen = True
         # Generate initial pattern
         self.regenerate_pattern()
     
@@ -41,14 +41,22 @@ class blk(gr.sync_block):
         self.index = 0
         self.need_regen = False
         print(f"Generated {self.pattern_len} bits with {self.error_rate*100:.3f}% error rate")
+    
+    def set_error_rate(self, error_rate):
+        """Update error rate and mark for regeneration"""
+        if abs(self.error_rate - error_rate) > 0.0001:  # Only regenerate if significant change
+            self.error_rate = error_rate
+            self.need_regen = True
+    
+    def set_regen_trigger(self, trigger):
+        """Trigger pattern regeneration when button is pressed"""
+        if trigger == 1 and self.last_trigger == 0:  # Detect press (0->1 transition)
+            print("\nButton pressed - marking for regeneration...")
+            self.need_regen = True
+        self.last_trigger = trigger
 
     def work(self, input_items, output_items):
         # Check if we need to regenerate before producing output
-
-        if (self.error_rate != self.prev_error_rate):
-            self.need_regen = True
-            self.prev_error_rate = self.error_rate
-        
         if self.need_regen:
             print("Regenerating pattern in work()...")
             self.regenerate_pattern()
