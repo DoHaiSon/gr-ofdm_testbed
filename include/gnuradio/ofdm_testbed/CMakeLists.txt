@@ -11,6 +11,5 @@
 ########################################################################
 install(FILES
     api.h
-    ber.h
-    ber_pattern_generator.h DESTINATION include/gnuradio/ofdm_testbed
+    ber.h DESTINATION include/gnuradio/ofdm_testbed
 )

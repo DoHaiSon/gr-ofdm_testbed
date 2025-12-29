@@ -39,4 +39,3 @@ add_custom_target(
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}
           ${CMAKE_BINARY_DIR}/test_modules/gnuradio/ofdm_testbed/
 )
-GR_ADD_TEST(qa_ber_pattern_generator ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_ber_pattern_generator.py)

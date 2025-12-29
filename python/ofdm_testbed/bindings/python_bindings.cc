@@ -22,7 +22,6 @@ namespace py = pybind11;
 /**************************************/
 // BINDING_FUNCTION_PROTOTYPES(
     void bind_ber(py::module& m);
-    void bind_ber_pattern_generator(py::module& m);
 // ) END BINDING_FUNCTION_PROTOTYPES
 
 
@@ -52,6 +51,5 @@ PYBIND11_MODULE(ofdm_testbed_python, m)
     /**************************************/
     // BINDING_FUNCTION_CALLS(
     bind_ber(m);
-    bind_ber_pattern_generator(m);
     // ) END BINDING_FUNCTION_CALLS
 }
