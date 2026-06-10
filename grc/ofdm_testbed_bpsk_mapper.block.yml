@@ -1,0 +1,19 @@
+id: ofdm_testbed_bpsk_mapper
+label: BPSK Mapper
+category: '[OFDM Testbed]'
+
+templates:
+  imports: import ofdm_testbed
+  make: ofdm_testbed.bpsk_mapper()
+
+# Input là byte (các bit 0, 1)
+inputs:
+- label: in
+  dtype: byte
+
+# Output là số phức (Complex)
+outputs:
+- label: out
+  dtype: complex
+
+file_format: 1

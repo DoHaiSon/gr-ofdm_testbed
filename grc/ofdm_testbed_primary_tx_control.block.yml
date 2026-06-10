@@ -1,0 +1,48 @@
+id: ofdm_testbed_primary_tx_control
+label: FDD Primary Source Control
+category: '[OFDM Testbed]'
+
+templates:
+  imports: from gnuradio import ofdm_testbed
+  make: ofdm_testbed.primary_tx_control(${packet_sz}, ${guard_interval}, ${source_id}, ${destination_id}, ${ack_burst_size})
+
+parameters:
+- id: packet_sz
+  label: Packet Size
+  dtype: int
+  default: 10
+- id: guard_interval
+  label: Guard Interval
+  dtype: int
+  default: 2
+- id: source_id
+  label: Source ID
+  dtype: int
+  default: 1
+- id: destination_id
+  label: Destination ID
+  dtype: int
+  default: 2
+- id: ack_burst_size
+  label: ACK Burst Size
+  dtype: int
+  default: 6
+
+
+inputs:
+- label: ACK
+  domain: stream
+  dtype: byte
+  vlen: ${ack_burst_size}
+- label: Data
+  domain: stream
+  dtype: byte
+  vlen: 1
+
+outputs:
+- label: TX Data
+  domain: stream
+  dtype: byte
+  vlen: 1
+
+file_format: 1

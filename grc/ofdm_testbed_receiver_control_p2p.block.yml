@@ -1,0 +1,36 @@
+id: ofdm_testbed_receiver_control_p2p
+label: Receiver Control P2P
+category: '[OFDM Testbed]'
+
+templates:
+  imports: from gnuradio import ofdm_testbed
+  make: ofdm_testbed.receiver_control_p2p(${packet_size}, ${transmitter_id}, ${receiver_id})
+
+parameters:
+- id: packet_size
+  label: Packet Size
+  dtype: int
+  default: 10
+- id: transmitter_id
+  label: Transmitter ID
+  dtype: int
+  default: 1
+- id: receiver_id
+  label: Receiver ID
+  dtype: int
+  default: 2
+
+inputs:
+- label: In
+  domain: stream
+  dtype: byte
+
+outputs:
+- label: Control
+  domain: stream
+  dtype: byte
+- label: Data
+  domain: stream
+  dtype: byte
+
+file_format: 1

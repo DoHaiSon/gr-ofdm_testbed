@@ -1,0 +1,473 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: Custom
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: top_block
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: ''
+    window_size: 1280, 1024
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 12]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: bpsk
+  id: variable_constellation
+  parameters:
+    comment: ''
+    const_points: '[-1+1j, 1+1j]'
+    dims: '1'
+    normalization: digital.constellation.AMPLITUDE_NORMALIZATION
+    precision: '8'
+    rot_sym: '2'
+    soft_dec_lut: None
+    sym_map: '[0, 1]'
+    type: calcdist
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 28.0]
+    rotation: 0
+    state: true
+- name: cp_length
+  id: variable
+  parameters:
+    comment: ''
+    value: '16'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [392, 12]
+    rotation: 0
+    state: enabled
+- name: data_block_rep
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [984, 12.0]
+    rotation: 0
+    state: enabled
+- name: data_block_sz
+  id: variable
+  parameters:
+    comment: ''
+    value: '21'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 12]
+    rotation: 0
+    state: enabled
+- name: data_size
+  id: variable
+  parameters:
+    comment: ''
+    value: '1024'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 12]
+    rotation: 0
+    state: enabled
+- name: fft_len
+  id: variable
+  parameters:
+    comment: ''
+    value: '64'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: occupied_tones
+  id: variable
+  parameters:
+    comment: ''
+    value: '48'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [272, 12]
+    rotation: 0
+    state: enabled
+- name: pilot_block_rep
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [848, 12]
+    rotation: 0
+    state: enabled
+- name: preamble_block_rep
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [704, 12]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 1.5e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 76]
+    rotation: 0
+    state: enabled
+- name: silence_block_rep
+  id: variable
+  parameters:
+    comment: ''
+    value: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [976, 76.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: 25e3
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 188.0]
+    rotation: 0
+    state: enabled
+- name: blocks_repack_bits_bb_0
+  id: blocks_repack_bits_bb
+  parameters:
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_LSB_FIRST
+    k: '8'
+    l: '1'
+    len_tag_key: '""'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1248, 236.0]
+    rotation: 0
+    state: disabled
+- name: dc_blocker_xx_0_0
+  id: dc_blocker_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    length: '256'
+    long_form: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: cc
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [168, 252.0]
+    rotation: 0
+    state: enabled
+- name: digital_ofdm_rx_0_0
+  id: digital_ofdm_rx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    cp_len: fft_len//4
+    fft_len: fft_len
+    header_mod: '"BPSK"'
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    occupied_carriers: ((-4,-3,-2,-1,1,2,3,4),)
+    packet_len_key: '"rx_len"'
+    payload_mod: '"BPSK"'
+    pilot_carriers: ((-6,-5,5,6),)
+    pilot_symbols: ((-1,1,-1,1),)
+    scramble_bits: 'False'
+    sync_word1: None
+    sync_word2: None
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [536, 148.0]
+    rotation: 0
+    state: enabled
+- name: digital_ofdm_tx_0
+  id: digital_ofdm_tx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    cp_len: fft_len//4
+    fft_len: fft_len
+    header_mod: '"BPSK"'
+    log: 'False'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    occupied_carriers: ((-4,-3,-2,-1,1,2,3,4),)
+    packet_len_key: len_tag_key
+    payload_mod: '"BPSK"'
+    pilot_carriers: ((-6,-5,5,6),)
+    pilot_symbols: ((-1,1,-1,1),)
+    rolloff: '0'
+    scramble_bits: 'False'
+    sync_word1: None
+    sync_word2: None
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 492.0]
+    rotation: 0
+    state: true
+- name: ofdm_testbed_byte_to_bit_0
+  id: ofdm_testbed_byte_to_bit
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [472, 408.0]
+    rotation: 180
+    state: true
+- name: ofdm_testbed_receiver_control_p2p_0
+  id: ofdm_testbed_receiver_control_p2p
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_size: '1024'
+    receiver_id: '170'
+    transmitter_id: '187'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [864, 172.0]
+    rotation: 0
+    state: true
+- name: ofdm_testbed_zero_elimination_0
+  id: ofdm_testbed_zero_elimination
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    data_len: '1024'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    node_id: '170'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [992, 420.0]
+    rotation: 180
+    state: true
+- name: qtgui_sink_x_0
+  id: qtgui_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    bw: samp_rate
+    comment: ''
+    fc: '0'
+    fftsize: '1024'
+    gui_hint: 'tab_0@0: 0,0,1,1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    plotconst: 'True'
+    plotfreq: 'True'
+    plottime: 'True'
+    plotwaterfall: 'True'
+    rate: '10'
+    showports: 'True'
+    showrf: 'False'
+    type: complex
+    wintype: window.WIN_BLACKMAN_hARRIS
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [128, 532.0]
+    rotation: 0
+    state: enabled
+- name: show_image_0
+  id: show_image
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    displaybottomup: 'False'
+    gui_hint: 'tab_0@1: 0,0,1,1'
+    imageheight: '512'
+    imagewidth: '512'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [688, 428.0]
+    rotation: 180
+    state: enabled
+- name: soapy_bladerf_sink_0
+  id: soapy_bladerf_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '0.0'
+    center_freq: 2.415e9
+    comment: ''
+    dev_args: ''
+    freq_correction: '0'
+    gain: '20.0'
+    samp_rate: samp_rate
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [888, 576.0]
+    rotation: 0
+    state: true
+- name: soapy_bladerf_source_0
+  id: soapy_bladerf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    bandwidth: '0.0'
+    center_freq: 2.45e9
+    comment: ''
+    dev_args: ''
+    freq_correction: '0'
+    gain: '20.0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fc32
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 396.0]
+    rotation: 0
+    state: true
+- name: tab_0
+  id: qtgui_tab_widget
+  parameters:
+    alias: ''
+    comment: ''
+    gui_hint: ''
+    label0: QT GUI
+    label1: Demodulation
+    label10: Tab 10
+    label11: Tab 11
+    label12: Tab 12
+    label13: Tab 13
+    label14: Tab 14
+    label15: Tab 15
+    label16: Tab 16
+    label17: Tab 17
+    label18: Tab 18
+    label19: Tab 19
+    label2: Tab 2
+    label3: Tab 3
+    label4: Tab 4
+    label5: Tab 5
+    label6: Tab 6
+    label7: Tab 7
+    label8: Tab 8
+    label9: Tab 9
+    num_tabs: '2'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [104, 76.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_multiply_const_vxx_0_0_0, '0', digital_ofdm_rx_0_0, '0']
+- [dc_blocker_xx_0_0, '0', blocks_multiply_const_vxx_0_0_0, '0']
+- [digital_ofdm_rx_0_0, '0', ofdm_testbed_receiver_control_p2p_0, '0']
+- [digital_ofdm_tx_0, '0', soapy_bladerf_sink_0, '0']
+- [ofdm_testbed_byte_to_bit_0, '0', digital_ofdm_tx_0, '0']
+- [ofdm_testbed_receiver_control_p2p_0, '0', ofdm_testbed_byte_to_bit_0, '0']
+- [ofdm_testbed_receiver_control_p2p_0, '1', ofdm_testbed_zero_elimination_0, '0']
+- [ofdm_testbed_zero_elimination_0, '0', show_image_0, '0']
+- [ofdm_testbed_zero_elimination_0, '0', show_image_0, '1']
+- [soapy_bladerf_source_0, '0', dc_blocker_xx_0_0, '0']
+- [soapy_bladerf_source_0, '0', qtgui_sink_x_0, '0']
+
+metadata:
+  file_format: 1

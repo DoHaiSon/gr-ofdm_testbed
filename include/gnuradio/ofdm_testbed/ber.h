@@ -8,7 +8,8 @@
 #ifndef INCLUDED_OFDM_TESTBED_BER_H
 #define INCLUDED_OFDM_TESTBED_BER_H
 
-#include <gnuradio/block.h>
+
+#include <gnuradio/sync_block.h>
 #include <gnuradio/ofdm_testbed/api.h>
 
 namespace gr {
@@ -19,7 +20,8 @@ namespace ofdm_testbed {
  * \ingroup ofdm_testbed
  *
  */
-class OFDM_TESTBED_API ber : virtual public gr::block
+
+class OFDM_TESTBED_API ber : virtual public gr::sync_block
 {
 public:
     typedef std::shared_ptr<ber> sptr;
@@ -36,6 +38,7 @@ public:
      * \param enable_output Enable output stream (default: false)
      */
     static sptr make(int avg_len = 1000000, bool enable_output = false);
+    virtual void set_avg_len(int avg_len) = 0;
 };
 
 } // namespace ofdm_testbed

@@ -1,0 +1,24 @@
+id: ofdm_testbed_bpsk_demapper
+label: BPSK Demapper
+category: '[OFDM Testbed]'
+
+templates:
+  imports: from gnuradio import ofdm_testbed
+  make: ofdm_testbed.bpsk_demapper()
+
+
+parameters: []
+
+inputs:
+- label: Symbol In
+  domain: stream
+  dtype: complex
+  vlen: 1
+
+outputs:
+- label: Byte Out
+  domain: stream
+  dtype: byte
+  vlen: 1
+
+file_format: 1

@@ -1,0 +1,46 @@
+id: ofdm_testbed_image_vector_source
+label: Image Vector Source
+category: '[OFDM Testbed]'
+
+templates:
+  imports: from gnuradio import ofdm_testbed
+  make: ofdm_testbed.image_vector_source(${filename}, ${image_size}, ${packet_size}, ${repeat}, ${channel_coding}, ${vlen})
+
+parameters:
+- id: filename
+  label: Filename
+  dtype: file_open
+- id: image_size
+  label: Image Size
+  dtype: int
+  default: 1000
+- id: packet_size
+  label: Packet Size
+  dtype: int
+  default: 10
+- id: repeat
+  label: Repeat
+  dtype: bool
+  default: true
+  options: [true, false]
+  option_labels: ["Yes", "No"]
+- id: channel_coding
+  label: Channel Coding
+  dtype: int
+  default: 0
+- id: vlen
+  label: Vector Length
+  dtype: int
+  default: 1
+- id: tags
+  label: Tags
+  dtype: raw
+  default: '[]'
+
+outputs:
+- label: out
+  domain: stream
+  dtype: byte
+  vlen: ${vlen}
+
+file_format: 1

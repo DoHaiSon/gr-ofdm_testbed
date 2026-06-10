@@ -1,0 +1,24 @@
+id: ofdm_testbed_byte_to_bit
+label: Byte to Bit
+category: '[OFDM Testbed]'
+
+templates:
+  imports: from gnuradio import ofdm_testbed
+  make: ofdm_testbed.byte_to_bit()
+
+
+parameters: []
+
+inputs:
+- label: Byte In
+  domain: stream
+  dtype: byte
+  vlen: 1
+
+outputs:
+- label: Bit Out
+  domain: stream
+  dtype: byte
+  vlen: 1
+
+file_format: 1

@@ -1,0 +1,93 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: png
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: 1e6
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: ofdm_testbed_image_vector_source_0
+  id: ofdm_testbed_image_vector_source
+  parameters:
+    affinity: ''
+    alias: ''
+    channel_coding: '0'
+    comment: ''
+    filename: /home/minh/SDR_NC/2 Nodes/2_P2P_Img/lena_gray_512.txt
+    image_size: 512*512
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_size: '1024'
+    repeat: 'True'
+    tags: '[]'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [528, 188.0]
+    rotation: 0
+    state: enabled
+- name: show_image_0
+  id: show_image
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    displaybottomup: 'False'
+    gui_hint: ''
+    imageheight: '512'
+    imagewidth: '512'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [832, 228.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [ofdm_testbed_image_vector_source_0, '0', show_image_0, '0']
+- [ofdm_testbed_image_vector_source_0, '0', show_image_0, '1']
+
+metadata:
+  file_format: 1

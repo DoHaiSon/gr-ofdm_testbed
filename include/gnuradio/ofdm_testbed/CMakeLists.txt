@@ -11,5 +11,14 @@
 ########################################################################
 install(FILES
     api.h
-    ber.h DESTINATION include/gnuradio/ofdm_testbed
+    ber.h
+    ber_pattern_generator.h
+    receiver_control_p2p.h
+    primary_tx_control.h
+    byte_to_bit.h
+    bpsk_mapper.h
+    bpsk_demapper.h
+    image_vector_source.h
+    zero_elimination.h
+    DESTINATION include/gnuradio/ofdm_testbed
 )
